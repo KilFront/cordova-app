@@ -1,0 +1,19 @@
+{
+  "android": {
+    "release": {
+      "keystore": "./name.keystore",
+      "storePassword": "apowo.com",
+      "alias": "AliasOfTooqing",
+      "password": "tooqing",
+      "keystoreType": ""
+    }
+  },
+  "ios": {
+      "debug": {
+        "developmentTeam": "D9TBNT39EA"
+      },
+      "release": {
+        "developmentTeam": "D9TBNT39EA"
+      }
+  }
+}
