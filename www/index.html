@@ -29,23 +29,101 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="css/index.css">
         <title>Hello World</title>
+        <style>
+            #fixedInput {
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
     </head>
     <body>
-        <div class="app">
+        <!-- <div class="app">
             <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
+                <div>
+                    <h4>custom</h4>
+                    <button id="keyboard">点击</button>
+                </div>
             </div>
-        </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
+            <ion-footer-bar align-title="left" keyboard-attach class="bar-assertive">
+                <span class=input-label>查询：</span>
+                <input type=text placeholder="Search">
+            </ion-footer-bar>
+            <hr>
+            <div>
+                <input type="text">
+            </div>
+        </div> -->
+        <!-- <div id="fixedInput">
+            <input type="text" placeholder="..." >
+        </div> -->
+        <!-- <script src="cordova.js"></script>
+        <script src="js/index.js"></script> -->
+        <script>
+            document.getElementById('keyboard').addEventListener('click', () => {
+                console.log('clicked!');
+                
+            })
+        </script>
+        <script>
+            var config = {
+                type: Phaser.AUTO,
+                width: window.innerWidth,
+                height: window.innerHeight,
+                physics: {
+                    default: 'arcade',
+                    arcade: {
+                        gravity: { y: 200 }
+                    }
+                },
+                scene: {
+                    preload: preload,
+                    create: create
+                }
+            };
+        
+            var game = new Phaser.Game(config);
+        
+            function preload ()
+            {
+                this.load.setBaseURL('http://labs.phaser.io');
+        
+                // this.load.image('sky', 'assets/skies/space3.png');
+                // this.load.image('logo', 'assets/sprites/phaser3-logo.png');
+                // this.load.image('red', 'assets/particles/red.png');
+            }
+        
+            function create ()
+            {
+                this.add.image(400, 300, 'sky');
+        
+                var particles = this.add.particles('red');
+        
+                var emitter = particles.createEmitter({
+                    speed: 100,
+                    scale: { start: 1, end: 0 },
+                    blendMode: 'ADD'
+                });
+        
+                var logo = this.physics.add.image(400, 100, 'logo');
+        
+                logo.setVelocity(100, 200);
+                logo.setBounce(1, 1);
+                logo.setCollideWorldBounds(true);
+        
+                emitter.startFollow(logo);
+            }
+            </script>
     </body>
 </html>
