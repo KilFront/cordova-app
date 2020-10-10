@@ -1,1 +1,32 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/favicon.ico><title>vue-project</title><script src=/cordova.js></script><link href=/js/chunk-fc862ebc.258609b9.js rel=prefetch><link href=/js/polyfills-core-js.2260d8db.js rel=prefetch><link href=/js/polyfills-css-shim.dbc3f202.js rel=prefetch><link href=/js/polyfills-dom.6c095370.js rel=prefetch><link href=/css/app.b491cc2f.css rel=preload as=style><link href=/js/app.4d656d13.js rel=preload as=script><link href=/js/chunk-vendors.6ec5305a.js rel=preload as=script><link href=/css/app.b491cc2f.css rel=stylesheet></head><body><noscript><strong>We're sorry but vue-project doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=/js/chunk-vendors.6ec5305a.js></script><script src=/js/app.4d656d13.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input {
+      margin-top: 150%;
+    }
+  </style>
+  
+</head>
+<body>
+  <div>
+    <input type="text">
+  </div>
+  <script>
+    console.log('script');
+    
+    document.addEventListener('deviceready', onDeviceReady, false);
+    function onDeviceReady() {
+      console.log('deviceready');
+      
+      window.SoftInputMode.set('adjustPan');
+      window.SoftInputMode.get(function() {
+        console.log('get --');
+      })
+    }
+  </script>
+</body>
+</html>

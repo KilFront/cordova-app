@@ -16,11 +16,15 @@
     "android": "0.0.8",
     "cordova-android": "^9.0.0",
     "cordova-ios": "^6.1.0",
+    "cordova-plugin-android-softinputmode": "^0.2.1",
+    "cordova-plugin-fullscreen": "^1.3.0",
     "cordova-plugin-whitelist": "^1.3.4"
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-fullscreen": {},
+      "cordova-plugin-android-softinputmode": {}
     },
     "platforms": [
       "android",
