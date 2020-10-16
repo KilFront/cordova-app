@@ -23,7 +23,10 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <chcp>
-        <config-file url="https://2511b6c9540c.ngrok.io/chcp.json" />
+        <auto-download enabled="true" />
+        <auto-install enabled="true" />
+        <config-file url="https://2f3b5ee0b528.ngrok.io/chcp.json" />
+        <native-interface version="1" />
     </chcp>
     <engine name="android" />
 </widget>
