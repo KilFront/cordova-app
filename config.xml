@@ -21,5 +21,12 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <!-- <edit-config file="*-Info.plist" mode="merge" target="UIStatusBarHidden">
+        <true/>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="UIViewControllerBasedStatusBarAppearance">
+        <false/>
+        </edit-config> -->
+        <!-- <splash src="res/screen/ios/iphone11.png"/> -->
     </platform>
 </widget>
